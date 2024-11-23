@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  imlp428-unit02:
+    environment:
+      - DOCKER_COMPOSE_FILE_TYPE=original
+      - TZ=Asia/Taipei
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: imlp428-unit02-devcontainer:1.0.0
+    container_name: imlp428-unit02-devcontainer
+    volumes:
+      - ../:/imlp428-unit02
+    working_dir: /imlp428-unit02
+    networks:
+      - dev
+    tty: true
+
+networks:
+  dev:
+    external: true

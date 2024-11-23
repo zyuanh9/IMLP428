@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  imlp428-unit02:
+    environment:
+      - DOCKER_COMPOSE_FILE_TYPE=override
+    ports:
+      - 8000:8000
+    entrypoint: /usr/local/bin/python
+    command: ./web_app/manage.py runserver 0.0.0.0:8000
